@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/tom/projects/bindgen/build",
+  "command": "/usr/bin/clang  -g -Wno-nullability-completeness -fdiagnostics-color=always -g -std=gnu11 -Wall -Wextra -Wno-nullability-completeness -std=c23 -o CMakeFiles/libDynamicLibVulkan.dir/main.c.o -c /home/tom/projects/bindgen/main.c",
+  "file": "/home/tom/projects/bindgen/main.c",
+  "output": "CMakeFiles/libDynamicLibVulkan.dir/main.c.o"
+}
+]
