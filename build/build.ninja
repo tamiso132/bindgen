@@ -49,11 +49,40 @@ cmake_ninja_workdir = /home/tom/projects/bindgen/build/
 
 build cmake_object_order_depends_target_libDynamicLibVulkan: phony || .
 
-build CMakeFiles/libDynamicLibVulkan.dir/main.c.o: C_COMPILER__libDynamicLibVulkan_unscanned_Debug /home/tom/projects/bindgen/main.c || cmake_object_order_depends_target_libDynamicLibVulkan
-  DEP_FILE = CMakeFiles/libDynamicLibVulkan.dir/main.c.o.d
+build CMakeFiles/libDynamicLibVulkan.dir/src/parse/struct.c.o: C_COMPILER__libDynamicLibVulkan_unscanned_Debug /home/tom/projects/bindgen/src/parse/struct.c || cmake_object_order_depends_target_libDynamicLibVulkan
+  DEP_FILE = CMakeFiles/libDynamicLibVulkan.dir/src/parse/struct.c.o.d
   FLAGS = -g -Wno-nullability-completeness -fdiagnostics-color=always -g -std=gnu11 -Wall -Wextra -Wno-nullability-completeness -std=c23
+  INCLUDES = -I/home/tom/projects/bindgen/src
   OBJECT_DIR = CMakeFiles/libDynamicLibVulkan.dir
-  OBJECT_FILE_DIR = CMakeFiles/libDynamicLibVulkan.dir
+  OBJECT_FILE_DIR = CMakeFiles/libDynamicLibVulkan.dir/src/parse
+
+build CMakeFiles/libDynamicLibVulkan.dir/src/parse/file.c.o: C_COMPILER__libDynamicLibVulkan_unscanned_Debug /home/tom/projects/bindgen/src/parse/file.c || cmake_object_order_depends_target_libDynamicLibVulkan
+  DEP_FILE = CMakeFiles/libDynamicLibVulkan.dir/src/parse/file.c.o.d
+  FLAGS = -g -Wno-nullability-completeness -fdiagnostics-color=always -g -std=gnu11 -Wall -Wextra -Wno-nullability-completeness -std=c23
+  INCLUDES = -I/home/tom/projects/bindgen/src
+  OBJECT_DIR = CMakeFiles/libDynamicLibVulkan.dir
+  OBJECT_FILE_DIR = CMakeFiles/libDynamicLibVulkan.dir/src/parse
+
+build CMakeFiles/libDynamicLibVulkan.dir/src/parse/function.c.o: C_COMPILER__libDynamicLibVulkan_unscanned_Debug /home/tom/projects/bindgen/src/parse/function.c || cmake_object_order_depends_target_libDynamicLibVulkan
+  DEP_FILE = CMakeFiles/libDynamicLibVulkan.dir/src/parse/function.c.o.d
+  FLAGS = -g -Wno-nullability-completeness -fdiagnostics-color=always -g -std=gnu11 -Wall -Wextra -Wno-nullability-completeness -std=c23
+  INCLUDES = -I/home/tom/projects/bindgen/src
+  OBJECT_DIR = CMakeFiles/libDynamicLibVulkan.dir
+  OBJECT_FILE_DIR = CMakeFiles/libDynamicLibVulkan.dir/src/parse
+
+build CMakeFiles/libDynamicLibVulkan.dir/src/parse/parse.c.o: C_COMPILER__libDynamicLibVulkan_unscanned_Debug /home/tom/projects/bindgen/src/parse/parse.c || cmake_object_order_depends_target_libDynamicLibVulkan
+  DEP_FILE = CMakeFiles/libDynamicLibVulkan.dir/src/parse/parse.c.o.d
+  FLAGS = -g -Wno-nullability-completeness -fdiagnostics-color=always -g -std=gnu11 -Wall -Wextra -Wno-nullability-completeness -std=c23
+  INCLUDES = -I/home/tom/projects/bindgen/src
+  OBJECT_DIR = CMakeFiles/libDynamicLibVulkan.dir
+  OBJECT_FILE_DIR = CMakeFiles/libDynamicLibVulkan.dir/src/parse
+
+build CMakeFiles/libDynamicLibVulkan.dir/src/main.c.o: C_COMPILER__libDynamicLibVulkan_unscanned_Debug /home/tom/projects/bindgen/src/main.c || cmake_object_order_depends_target_libDynamicLibVulkan
+  DEP_FILE = CMakeFiles/libDynamicLibVulkan.dir/src/main.c.o.d
+  FLAGS = -g -Wno-nullability-completeness -fdiagnostics-color=always -g -std=gnu11 -Wall -Wextra -Wno-nullability-completeness -std=c23
+  INCLUDES = -I/home/tom/projects/bindgen/src
+  OBJECT_DIR = CMakeFiles/libDynamicLibVulkan.dir
+  OBJECT_FILE_DIR = CMakeFiles/libDynamicLibVulkan.dir/src
 
 
 # =============================================================================
@@ -63,7 +92,7 @@ build CMakeFiles/libDynamicLibVulkan.dir/main.c.o: C_COMPILER__libDynamicLibVulk
 #############################################
 # Link the executable libDynamicLibVulkan
 
-build libDynamicLibVulkan: C_EXECUTABLE_LINKER__libDynamicLibVulkan_Debug CMakeFiles/libDynamicLibVulkan.dir/main.c.o
+build libDynamicLibVulkan: C_EXECUTABLE_LINKER__libDynamicLibVulkan_Debug CMakeFiles/libDynamicLibVulkan.dir/src/parse/struct.c.o CMakeFiles/libDynamicLibVulkan.dir/src/parse/file.c.o CMakeFiles/libDynamicLibVulkan.dir/src/parse/function.c.o CMakeFiles/libDynamicLibVulkan.dir/src/parse/parse.c.o CMakeFiles/libDynamicLibVulkan.dir/src/main.c.o
   DEP_FILE = CMakeFiles/libDynamicLibVulkan.dir/link.d
   FLAGS = -g -Wno-nullability-completeness -fdiagnostics-color=always -g
   LINK_FLAGS = -Xlinker --dependency-file=CMakeFiles/libDynamicLibVulkan.dir/link.d
@@ -99,6 +128,64 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/tom/projects/bindgen/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/tom/projects/bindgen/build/src && /usr/bin/ccmake -S/home/tom/projects/bindgen -B/home/tom/projects/bindgen/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build src/edit_cache: phony src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/tom/projects/bindgen/build/src && /usr/bin/cmake --regenerate-during-build -S/home/tom/projects/bindgen -B/home/tom/projects/bindgen/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/tom/projects/bindgen/src/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/parse/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/tom/projects/bindgen/build/src/parse && /usr/bin/ccmake -S/home/tom/projects/bindgen -B/home/tom/projects/bindgen/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build src/parse/edit_cache: phony src/parse/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/parse/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/tom/projects/bindgen/build/src/parse && /usr/bin/cmake --regenerate-during-build -S/home/tom/projects/bindgen -B/home/tom/projects/bindgen/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/parse/rebuild_cache: phony src/parse/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
 # =============================================================================
@@ -109,7 +196,21 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/tom/projects/bindgen/build
 
-build all: phony libDynamicLibVulkan
+build all: phony libDynamicLibVulkan src/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/tom/projects/bindgen/build/src
+
+build src/all: phony src/parse/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/tom/projects/bindgen/build/src/parse
+
+build src/parse/all: phony
 
 # =============================================================================
 # Built-in targets
@@ -118,14 +219,14 @@ build all: phony libDynamicLibVulkan
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/tom/projects/bindgen/CMakeLists.txt /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/Clang-C.cmake /usr/share/cmake/Modules/Compiler/Clang.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Linker/GNU-C.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.31.6/CMakeCCompiler.cmake CMakeFiles/3.31.6/CMakeCXXCompiler.cmake CMakeFiles/3.31.6/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/tom/projects/bindgen/CMakeLists.txt /home/tom/projects/bindgen/src/CMakeLists.txt /home/tom/projects/bindgen/src/parse/CMakeLists.txt /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/Clang-C.cmake /usr/share/cmake/Modules/Compiler/Clang.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Linker/GNU-C.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.31.6/CMakeCCompiler.cmake CMakeFiles/3.31.6/CMakeCXXCompiler.cmake CMakeFiles/3.31.6/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/tom/projects/bindgen/CMakeLists.txt /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/Clang-C.cmake /usr/share/cmake/Modules/Compiler/Clang.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Linker/GNU-C.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.31.6/CMakeCCompiler.cmake CMakeFiles/3.31.6/CMakeCXXCompiler.cmake CMakeFiles/3.31.6/CMakeSystem.cmake: phony
+build /home/tom/projects/bindgen/CMakeLists.txt /home/tom/projects/bindgen/src/CMakeLists.txt /home/tom/projects/bindgen/src/parse/CMakeLists.txt /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/Clang-C.cmake /usr/share/cmake/Modules/Compiler/Clang.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Linker/GNU-C.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.31.6/CMakeCCompiler.cmake CMakeFiles/3.31.6/CMakeCXXCompiler.cmake CMakeFiles/3.31.6/CMakeSystem.cmake: phony
 
 
 #############################################

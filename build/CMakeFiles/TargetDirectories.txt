@@ -1,3 +1,7 @@
 /home/tom/projects/bindgen/build/CMakeFiles/libDynamicLibVulkan.dir
 /home/tom/projects/bindgen/build/CMakeFiles/edit_cache.dir
 /home/tom/projects/bindgen/build/CMakeFiles/rebuild_cache.dir
+/home/tom/projects/bindgen/build/src/CMakeFiles/edit_cache.dir
+/home/tom/projects/bindgen/build/src/CMakeFiles/rebuild_cache.dir
+/home/tom/projects/bindgen/build/src/parse/CMakeFiles/edit_cache.dir
+/home/tom/projects/bindgen/build/src/parse/CMakeFiles/rebuild_cache.dir

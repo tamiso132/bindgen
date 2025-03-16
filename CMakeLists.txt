@@ -22,10 +22,11 @@ set(SOURCES_FILES_GAME_ENGINE)
 set(INCLUDE_DIRECTORIES_ENGINE)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+add_subdirectory(src)
 
 
-add_executable(${LIB_NAME} main.c)
-include_directories(${CLANG_INCLUDE_DIRS})
+add_executable(${LIB_NAME} ${SOURCES_FILES_GAME_ENGINE})
+include_directories(${CLANG_INCLUDE_DIRS} ${INCLUDE_DIRECTORIES_ENGINE})
 target_link_libraries(${LIB_NAME} PRIVATE ${CLANG_LIBRARIES} clang)
 
 set_target_properties(${LIB_NAME} PROPERTIES C_STANDARD 23)

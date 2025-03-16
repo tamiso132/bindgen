@@ -1,0 +1,24 @@
+BasedOnStyle: GNU
+IndentWidth: 2
+TabWidth: 2
+UseTab: Never
+BreakBeforeBraces: Linux
+AllowShortFunctionsOnASingleLine: None
+ColumnLimit: 120
+SpaceBeforeParens: Never
+AlignConsecutiveDeclarations: true
+AlignConsecutiveAssignments: true
+SortIncludes: false
+MaxEmptyLinesToKeep: 2
+CommentPragmas: "^" 
+BraceWrapping:
+  AfterClass: true
+  AfterControlStatement: true  # Adds new lines after control statements like 'if', 'for', 'while'
+  AfterFunction: true          # Adds new lines after function definitions
+  AfterNamespace: true
+  AfterStruct: true
+  AfterEnum: true
+  BeforeElse: true             # Adds a line break before 'else'
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true

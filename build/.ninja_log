@@ -1,5 +1,10 @@
 # ninja log v6
-0	25	1742096752150093212	CMakeFiles/libDynamicLibVulkan.dir/main.c.o	56e4eb07bd80cfa2
-25	148	1742096752176382741	libDynamicLibVulkan	f2cc5a3be0ecea27
-1	26	1742096773384420870	CMakeFiles/libDynamicLibVulkan.dir/main.c.o	56e4eb07bd80cfa2
-26	155	1742096773409421256	libDynamicLibVulkan	f2cc5a3be0ecea27
+1	26	1742138207395582238	CMakeFiles/libDynamicLibVulkan.dir/main.c.o	56e4eb07bd80cfa2
+19	151	1742150306558838637	libDynamicLibVulkan	8d6095f0031dc2f6
+1	19	1742145697208567358	CMakeFiles/libDynamicLibVulkan.dir/src/parse/struct.c.o	540821c6548f053e
+1	20	1742145697210027261	CMakeFiles/libDynamicLibVulkan.dir/src/main.c.o	45f0f3044ee82c8c
+1	19	1742145697209749437	CMakeFiles/libDynamicLibVulkan.dir/src/parse/file.c.o	ed7c2c25fb43d58f
+0	19	1742150306538921738	CMakeFiles/libDynamicLibVulkan.dir/src/parse/function.c.o	e6f20aba31cc88af
+1	21	1742145697209937541	CMakeFiles/libDynamicLibVulkan.dir/src/parse/parse.c.o	c1a39505cc1f2fbf
+1	19	1742150594507762286	CMakeFiles/libDynamicLibVulkan.dir/src/parse/function.c.o	e6f20aba31cc88af
+19	141	1742150594527019219	libDynamicLibVulkan	8d6095f0031dc2f6
