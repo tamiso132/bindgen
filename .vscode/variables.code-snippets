@@ -1,0 +1,20 @@
+{
+	"Dynamic Comment": {
+		"prefix": "variables",
+		"body": [
+			"// clang-format off",
+			"// Variables",
+			" VkDevice device = app->ctx_vk.device;",
+			" FrameData       *frame_data      = &app->frame_data[app->ctx_vk.frame_index];",
+			" VkPipelineLayout layout          = app->ctx_vk.layout;",
+			" VkDescriptorSet  set             = resource_get_descriptor_set(app->ctx_vk.res);",
+			" VkCommandBuffer  cmd             = frame_data->main_cmd;",
+			" VkExtent2D       window_extent   = app->ctx_vk.window_extent;",
+			" AllocatedImage  *swapchain_image = get_swapchain_image(&app->ctx_vk);",
+			" T_Resource      *res             = app->ctx_vk.res;",
+			" u32              frame_index     = app->ctx_vk.frame_index;",
+			"// clang-format off",
+		],
+		"description": "Insert a formatted comment block with a customizable title"
+	}
+}

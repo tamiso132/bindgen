@@ -1,0 +1,48 @@
+{
+    "files.autoSave": "afterDelay",
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/thirdparty",
+        "${workspaceFolder}/src",
+        "${workspaceFolder}"
+    ],
+    "editor.formatOnSave": true,
+    "[cpp]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "editor.formatOnPaste": true,
+    "[c]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+        "editor.foldingStrategy": "indentation",
+        
+    },
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.minimap.enabled": false,
+    "files.associations": {
+        "*.h": "c",
+        "array": "c",
+        "string": "c",
+        "string_view": "c",
+        "span": "c"
+    },
+    "clangd.arguments": [
+        "--header-insertion=never",
+    ],
+    "glsllint.glslangValidatorArgs": [
+        "-V",
+    ],
+    "[jsonc]": {
+        "editor.formatOnSave": false
+    },
+    "editor.autoClosingBrackets": "always",
+    "editor.folding": true,
+    "editor.foldingImportsByDefault": true,
+    "editor.foldingHighlight": true,
+    "editor.find-it-faster": true,
+}

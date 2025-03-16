@@ -1,0 +1,13 @@
+{
+	"Dynamic Comment": {
+		"prefix": "commentblock",
+		"body": [
+			"",
+			"/********************************************************",
+			"--------${1:TITLE}",
+			"*********************************************************/",
+			""
+		],
+		"description": "Insert a formatted comment block with a customizable title"
+	}
+}
