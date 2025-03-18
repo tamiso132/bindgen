@@ -1,5 +1,4 @@
 #include <assert.h>
-#include <ctype.h>
 #include <regex.h>
 #include <stdio.h>
 
@@ -18,7 +17,7 @@ s_parse_parameter(const char *cursor, regmatch_t matches[], TFunctionInfo *func_
 {
 
   u32       param_len = matches[FUNCTION_TYPE_PARAM].rm_eo - matches[FUNCTION_TYPE_PARAM].rm_so;
-  Parameter param     = { 0 };
+  Field param     = { 0 };
   char      buffer[param_len + 1];
   strncpy(buffer, &cursor[matches[FUNCTION_TYPE_PARAM].rm_so], param_len);
   buffer[param_len] = '\0';
@@ -93,7 +92,7 @@ s_parse_functions_from_string(const char *content, VecTFunctionInfo *function_in
       TFunctionInfo func_info = { 0 };
       func_info.name          = calloc(1, name_byte_len + 1);
       func_info.return_type   = calloc(1, return_byte_len + 1);
-      VEC_INIT(func_info.parameters, sizeof(Parameter), 10);
+      VEC_INIT(func_info.parameters, sizeof(Field), 10);
 
       strncpy((char *)func_info.name, &cursor[matches[FUNCTION_TYPE_NAME].rm_so], name_byte_len);
       strncpy((char *)func_info.return_type, &cursor[matches[FUNCTION_TYPE_RETURN_TYPE].rm_so], return_byte_len);
@@ -112,7 +111,7 @@ s_parse_functions_from_string(const char *content, VecTFunctionInfo *function_in
 void
 s_print_function_info(TFunctionInfo *func_info)
 {
-  VecParameter *params = &func_info->parameters;
+  VecField *params = &func_info->parameters;
 
 
   printf("FunctionName: %s\n", func_info->name);

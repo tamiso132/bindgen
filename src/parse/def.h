@@ -11,25 +11,19 @@ typedef struct {
   const char name[MAX_NAME_LEN];
   const char type[TYPE_PARAMETER_SPECIFIER_MAX][MAX_TYPE_LEN];
   u32        type_len;
-} Parameter;
-VEC_IMPLEMENT(Parameter);
+} Field;
+VEC_IMPLEMENT(Field);
 
 typedef struct {
   const char *name;
   const char *return_type;
 
-  VecParameter parameters;
+  VecField parameters;
 } TFunctionInfo;
 
 typedef struct {
-  const char *name[MAX_NAME_LEN];
-  const char *field[MAX_TYPE_LEN];
-} TStructField;
-VEC_IMPLEMENT(TStructField);
-
-typedef struct {
-  VecTStructField fields;
-  char           *name;
+  VecField fields;
+  char    *name;
 } TStruct;
 
 VEC_IMPLEMENT(TStruct);

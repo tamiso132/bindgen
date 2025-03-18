@@ -18,7 +18,7 @@ parse_header(const char *file_name)
 
     current_child->data = s_read_file_content(current_child->file_name, &current_child->len);
     s_parse_functions_from_string(current_child->data, &header_info.function_infos);
-    //s_parse_struct_from_string(current_child->data, &header_info.structs_infos);
+    s_parse_struct_from_string(current_child->data, &header_info.structs_infos);
   }
 }
 
