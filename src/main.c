@@ -1,7 +1,4 @@
-#include <clang-c/CXString.h>
-#include <clang-c/Index.h>
-
-
+#include "stdio.h"
 #include "parse/pub.h"
 
 

@@ -216,9 +216,6 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//The directory containing a CMake configuration file for Clang.
-Clang_DIR:PATH=/usr/lib/cmake/clang
-
 //Value Computed by CMake
 DynamicLibVulkan_BINARY_DIR:STATIC=/home/tom/projects/bindgen/build
 
@@ -227,9 +224,6 @@ DynamicLibVulkan_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 DynamicLibVulkan_SOURCE_DIR:STATIC=/home/tom/projects/bindgen
-
-//The directory containing a CMake configuration file for LLVM.
-LLVM_DIR:PATH=LLVM_DIR-NOTFOUND
 
 
 ########################
