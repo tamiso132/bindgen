@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 #include "internal.h"
+#include "parse/def.h"
 #include "pub.h"
 
 
@@ -13,12 +14,14 @@ parse_header(const char *file_name)
   root_folder.root_file_name = file_name;
   s_root_folder_search_headers(&root_folder);
   for(u32 i = 0; i < root_folder.includes.len; i++) {
-    TInclude  *current_child = &root_folder.includes.data[i];
-    HeaderInfo header_info   = { 0 };
+    TIncludeInfo *current_child = &root_folder.includes.data[i];
+    HeaderInfo    header_info   = { 0 };
 
     current_child->data = s_read_file_content(current_child->file_name, &current_child->len);
     //s_parse_functions_from_string(current_child->data, &header_info.function_infos);
-    s_parse_struct_from_string(current_child->data, &header_info.structs_infos);
+    // s_parse_struct_from_string(current_child->data, &header_info.structs_infos);
+    VEC_INIT(root_folder.all_defines, sizeof(TDefineInfo), 10);
+    s_parse_defines_from_string(current_child->data, &root_folder.all_defines);
   }
 }
 
@@ -32,7 +35,7 @@ s_root_folder_search_headers(TRootFolder *root_folder)
 
   regex_t    regex;
   regmatch_t matches[2];
-  VEC_INIT(root_folder->includes, sizeof(TInclude), 10);
+  VEC_INIT(root_folder->includes, sizeof(TIncludeInfo), 10);
   const char *include_pattern = "#\\s*include\\s*\"([^\"]+)\""; // Compile the regex
 
   if(regcomp(&regex, include_pattern, REG_EXTENDED) != 0) {
@@ -51,7 +54,7 @@ s_root_folder_search_headers(TRootFolder *root_folder)
 
       printf("File: %.*s\n", end - start, cursor + start);
 
-      TInclude include = { 0 };
+      TIncludeInfo include = { 0 };
       strncpy((char *)include.file_name, (cursor + start), end - start);
       VEC_ADD(root_folder->includes, include);
 

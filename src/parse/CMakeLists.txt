@@ -3,4 +3,5 @@ add_sources(
    file.c
    function.c
    parse.c
+   preprocessor.c
 )

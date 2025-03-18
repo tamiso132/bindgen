@@ -13,7 +13,7 @@ typedef enum {
 
 
 void
-s_print_function_struct(TStruct *struct_info)
+s_print_function_struct(TStructInfo *struct_info)
 {
   VecField *params = &struct_info->fields;
   printf("StructName: %s\n", struct_info->name);
@@ -30,14 +30,13 @@ s_print_function_struct(TStruct *struct_info)
   printf("\n\n");
 }
 void
-s_parse_struct_from_string(const char *content, VecTStruct *structs)
+s_parse_struct_from_string(const char *content, VecTStructInfo *structs)
 {
-  regex_t    regex;
-  regmatch_t matches[10] = { 0 };
-  TStruct    temp_struct = { 0 };
+  regex_t     regex;
+  regmatch_t  matches[10] = { 0 };
+  TStructInfo temp_struct = { 0 };
 
-  VEC_INIT((*structs), sizeof(TStruct), 10);
-
+  VEC_INIT((*structs), sizeof(TStructInfo), 10);
 
   //\\s+ checks for whitespace 1 or more
   //\\s* checks for whitespace 0 or more
@@ -52,7 +51,7 @@ s_parse_struct_from_string(const char *content, VecTStruct *structs)
     const char *cursor = content;
     while(regexec(&regex, cursor, 10, matches, 0) == 0) {
       VEC_ADD((*structs), temp_struct);
-      TStruct *struct_info = &structs->data[structs->len - 1];
+      TStructInfo *struct_info = &structs->data[structs->len - 1];
 
       if(matches[STRUCT_MATCH_NAME_1].rm_eo != matches[STRUCT_MATCH_NAME_1].rm_so) {
         u32 name_len = matches[STRUCT_MATCH_NAME_1].rm_eo - matches[STRUCT_MATCH_NAME_1].rm_so;

@@ -21,7 +21,9 @@ typedef double f64;
 #if !defined(NDEBUG)
 
 #define VEC_DEBUG_FIELD bool initialized;
+
 #define VEC_DEBUG_INIT(vec) vec.initialized = true
+
 #define VEC_INITIALIZED_CHECK(vec)                                                                                     \
   if(!vec.initialized) {                                                                                               \
     log_error("NOT INITIALIZED A VECTOR");                                                                             \
