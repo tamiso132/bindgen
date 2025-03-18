@@ -16,11 +16,11 @@ void
 s_print_function_struct(TStruct *struct_info)
 {
   VecField *params = &struct_info->fields;
-  printf("FunctionName: %s\n", struct_info->name);
+  printf("StructName: %s\n", struct_info->name);
 
   if(params->len > 0) {
     for(u32 i = 0; i < params->len; i++) {
-      printf("Parameter %d: ", i);
+      printf("Field %d: ", i);
       for(u32 t = 0; t < params->data[i].type_len; t++) {
         printf("%.*s ", MAX_TYPE_LEN, params->data[i].type[t * MAX_TYPE_LEN]);
       }
@@ -63,18 +63,21 @@ s_parse_struct_from_string(const char *content, VecTStruct *structs)
       }
       u32 param_len = matches[STRUCT_MATCH_FIELDS].rm_eo - matches[STRUCT_MATCH_FIELDS].rm_so;
       if(param_len > 0) {
-        Field field = { 0 };
-        char  buffer[param_len];
-        memset(buffer, 0, param_len);
+        VEC_INIT(struct_info->fields, sizeof(Field), 10);
+
+        char buffer[256];
+        memset(buffer, 0, 256);
+        strncpy(buffer, &cursor[matches[STRUCT_MATCH_FIELDS].rm_so], param_len);
 
         char *save_ptr_top = NULL;
         char *token        = __strtok_r(buffer, ";", &save_ptr_top);
-
         while(token != NULL) {
+          Field field          = { 0 };
           char *save_ptr_inner = NULL;
           char *sub_token      = __strtok_r(token, " ", &save_ptr_inner);
           u32   type_index     = 0;
           char  sub_words[TYPE_PARAMETER_SPECIFIER_MAX * MAX_TYPE_LEN + MAX_NAME_LEN] = { 0 };
+
 
           while(sub_token != NULL) {
             u32 token_len = strlen(sub_token);
@@ -82,18 +85,23 @@ s_parse_struct_from_string(const char *content, VecTStruct *structs)
               sub_token = __strtok_r(NULL, " ", &save_ptr_inner);
               continue;
             }
-
             strncpy((char *)&sub_words[type_index * MAX_TYPE_LEN], sub_token, token_len);
             sub_token = __strtok_r(NULL, " ", &save_ptr_inner);
             type_index++;
           }
+          // TODO, min word len, like 2
+          if(type_index == 0) { // no word was captured
+            token = __strtok_r(NULL, ";", &save_ptr_top);
+            continue;
+          }
+
           type_index--;
           field.type_len = type_index;
           u32 type_len   = MAX_TYPE_LEN * field.type_len;
           strncpy((char *)field.type, (char *)sub_words, type_len);
           strncpy((char *)field.name, (char *)&sub_words[type_len], MAX_NAME_LEN);
 
-          token = __strtok_r(NULL, ",", &save_ptr_top);
+          token = __strtok_r(NULL, ";", &save_ptr_top);
 
           VEC_ADD(struct_info->fields, field);
         }

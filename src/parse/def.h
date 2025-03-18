@@ -23,7 +23,7 @@ typedef struct {
 
 typedef struct {
   VecField fields;
-  char    *name;
+  char     name[MAX_NAME_LEN];
 } TStruct;
 
 VEC_IMPLEMENT(TStruct);

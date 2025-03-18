@@ -27,4 +27,3 @@ except subprocess.CalledProcessError as e:
 # Optional: Change back to the original directory
 os.chdir("..")
 
-subprocess.run('./build/libDynamicLibVulkan')
